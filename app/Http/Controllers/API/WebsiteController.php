@@ -109,19 +109,4 @@ class WebsiteController extends BaseController
         ]);
         return $this->sendResponse($subscription, 'Subscription added successfully.');
     }
-
-    public function sendMailWithAttachment()
-    {
-        $users = User::all();
-        $mailData = [
-            'title' => 'This is Test Mail sent by Rupesh',
-            'detail' => 'This is Test Mail detail sent by Rupesh',
-        ];
-           
-        foreach ($users as $key => $user) {
-            Mail::to($user)->queue(new WebsitePost($mailData));
-        }
-             
-        echo "Mail send successfully !!";
-    }
 }

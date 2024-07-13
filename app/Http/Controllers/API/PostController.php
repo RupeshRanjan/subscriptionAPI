@@ -40,7 +40,7 @@ class PostController extends BaseController
 
         $post = Post::create($input);
    
-        return $this->sendResponse(new PostResource($post), 'Website created successfully.');
+        return $this->sendResponse(new PostResource($post), 'Post created successfully.');
     }
 
     /**

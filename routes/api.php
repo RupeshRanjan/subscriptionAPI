@@ -16,5 +16,3 @@ Route::middleware('auth:sanctum')->group( function () {
     Route::apiResource('websites/{website}/posts', PostController::class);
 });
 
-Route::get('send/mail', [WebsiteController::class, 'sendMailWithAttachment']);
-
